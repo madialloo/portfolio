@@ -1,0 +1,65 @@
+/***** Global Properties  *****/
+* {
+   padding: 0;
+   margin: 0;
+}
+.ul-content {
+    margin: 0;
+    padding: 0;
+}
+/*** Wrapper  ***/
+.wrapper {
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*** Header ***/
+.header {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #ff5c14;
+    background-color: #54605e;
+}
+.header img {
+    min-height: 100px;
+    min-width: 100%;
+}
+/*** Menu container ***/
+.ul-container {
+    padding: 0 ;
+    margin: 0;
+    display: inline;
+}
+/*** Container ***/
+.container {
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden; /* needed if height was fixed (e.g: height: 400px;)*/
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+}
+/*** Footer ***/
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    background-color: #ff5c14;
+    border: 5px solid #fff;
+}
+
+.footer-p {
+    font-family: Tahoma, Arial;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.js-definition {
+    font: 15px/1.5rem Roboto, Arial;
+}
