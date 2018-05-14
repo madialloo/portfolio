@@ -1,0 +1,453 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* css div to center the circle  */
+#center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+/* css centered-circle  */
+#circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(11, 44, 94, 0.815);
+    background-color: rgba(99, 9, 99, 0.822);
+    transform: translate(-50%,-50%);
+    /* for making a tennis curve*/
+    overflow: hidden; 
+    /*end of for making a tennis curve*/
+    animation: animate 1.5s linear infinite;
+}
+/* css centered-circle for making a tennis curve on the right side  */
+#circle::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    left: -65%;
+    border:  5px solid silver;
+    filter: blur(1px);
+}
+/* css centered-circle for making a tennis curve on the left side  */
+#circle::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    right: -65%;
+    border:  5px solid silver;
+    filter: blur(1px);
+}
+/* animating the circle */
+@keyframes animate {
+    0% {
+        transform: translate(-50%,-50%) translateY(-300px) rotate(0deg); /* animation at 0.5s*/
+    }
+    50% {
+        transform: translate(-50%,-50%) translateY(0) rotate(180deg); /* animation at 1s*/
+    }
+    100% {
+        transform: translate(-50%,-50%) translateY(-300px) rotate(360deg); /* animation at 1.5s*/
+    }
+}
+ /* title/message in the circle  */
+#circle>h1 {
+    position: absolute;
+    /* margin: 0 auto; */
+    top:35%;
+    left: 15%;
+    margin: auto;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.4;
+    font-family: Roboto, Arial, Helvetica, sans-serif
+}
+
+/*  shadow under the circle  */
+#shadow {
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px solid blueviolet;
+    background: rgba(245, 242, 242, 0.966);
+    transform: translate(-50%,100%);
+    z-index: -1;
+    filter: blur(2px);
+    animation: shadow 1.5s linear infinite;
+    /* animating the shadow : make it follow the circle movement*/
+}
+@keyframes shadow {
+    0% {
+        transform: translate(-50%,100%) scale(1); /* animation at 0.5s*/
+    }
+    50% {
+        transform: translate(-50%,100%) scale(0.5); /* animation at 1s*/
+    }
+    100% {
+        transform: translate(-50%,100%) scale(1); /* animation at 1.5s*/
+    }
+}
+/* #region of background slider 
+ /* initial div containing sliders */
+ .topSlider {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: #1f1f1f; */
+    background: url('../images/openf1.png') no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+  }
+  /* text ON the slides  */
+  .topSlider span {
+    position: absolute;
+    color: rgba(80, 79, 7, 0.7);
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  /* title of the text ON the slides */
+  .topSlider span h1 {
+      font-family: Arial, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: 3rem;
+      margin-bottom: 0%;
+  }
+  .topSlider span h2 {
+      margin-top: 0%;
+  }
+  /* all elements having the class = 'slide' */
+  /* the width: 100vh; makes the images scale when windows is resized*/
+.topSlider .slide {
+    position: absolute;
+    display: block;
+    width: 100vh;
+    height: 100%;
+    -webkit-animation: slide 10s infinite;
+    -ms-animation: slide 10s infinite;
+    animation: slide 10s infinite;
+    overflow: hidden;
+}
+.topSlider .slide:nth-child(1) {
+    left: 0%;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+    background-image: url('../images/business.jpg');
+    width: 100vh; 
+    background-size: cover;
+    background-position: center;
+}
+.topSlider .slide:nth-child(2) {
+    left: 100%;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    background-image: url('../images/blogging.jpg');
+    width: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.topSlider .slide:nth-child(3) {
+    left: 100%;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    background-image: url('../images/business.jpg');
+    width: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.topSlider .slide:nth-child(4) {
+    left: 100%;
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+    background-image: url('../images/blogging.jpg');
+    width: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.topSlider .slide:nth-child(5) {
+    left: 100%;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
+    background-image: url("../images/business.jpg");
+    width: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+    /* text for a paragraph in case its needed */
+  .topSlider p {
+      font-family: Roboto,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 70px;
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+      margin-top: 340px;
+      color: white;
+  }
+   /* animation of the slider for -webkit   */
+  @-webkit-keyframes slide {
+  0% {
+      left: 100%;
+      width: 100%;
+     }
+  5% {
+      left: 0%;
+     }
+  25% {
+      left: 0%;
+     }
+  30% {
+      left: -100%;
+      width: 100%;
+     }
+  31% {
+      left: -100%;
+      width: 0%;
+      }
+  100% {
+      left: 100%;
+      width: 0%;
+      }
+  }
+  /* animation of the slider for 'all'   */
+  @keyframes slide {
+    0% {
+      left: 100%;
+      width: 100%; }
+    5% {
+      left: 0%; }
+    25% {
+      left: 0%; }
+    30% {
+      left: -100%;
+      width: 100%; }
+    31% {
+      left: -100%;
+      width: 0%; }
+    100% {
+      left: 100%;
+      width: 0%; }
+  }
+  
+/* end of region 
+**********************************************************
+**********************************************************
+/* CSS start for the contenu template 
+**********************************************************
+*********************************************************/
+/* CSS Variables  */
+:root{
+    /* primary color for all element starting with -- */
+    --primary: #ddd;
+    --dark: #333;
+    --ligth: #fff;
+    --shadow: 0 1px 5px rgba(104, 104,  104, 0.8);
+}
+/* main structure  */
+html {
+    /* size of the element wont change */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+/********************************************
+body element css defined at the top
+/********************************************
+/* body {
+    background-color: #ccc;
+    margin: 30px top-botton 50pxleft-right;
+    line-height: 1.4;
+} */
+/********************************************/
+.btn {
+    background-color: var(--dark);
+    color: var(--ligth);
+    padding: 0.6em 1.3rem /*1 rem = 16px, they are more responsive*/;
+    text-decoration: none;
+    border:0;
+}
+img {
+    max-width: 100%; /*images will stay in their parent 'box'*/
+}
+.wrapper {
+    display: grid;
+    grid-gap: 20px; /*distance between elements and wrapper itself*/
+    /* herited from body in comment above*/
+    margin: 30px /*top-botton*/ 50px/*left-right*/;
+}
+/* Navigation  */
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0; /*ul has a padding by default*/
+    list-style: none; /*del bullets on links*/
+    grid-template-columns: repeat(4/*nb of times to repeat*/, 1fr /*one fractionnal time: size between link*/)
+}
+.main-nav a {
+    background-color: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+.main-nav a:hover {
+    background-color: var(--dark);
+    color: var(--ligth);
+}
+/* top container  */
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+        'showcase showcase top-box-a'
+        'showcase showcase top-box-b';
+
+}
+ /* Showcase */
+.showcase {
+    grid-area: showcase; /*assign showcase from top-container to type of grid-area*/
+    min-height: 400px;
+    background: url('../images/blogging.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+.showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0; /*margin and paragraph will come together*/
+    color: var(--ligth);
+}
+.showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--ligth);
+}
+/* Top Boxes */
+.top-box {
+    background-color: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    -ms-justify-items: center;
+    -webkit-justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.top-box .price {
+    font-size: 2.5rem;
+}
+.top-box-a {
+    grid-area: top-box-a;
+}
+.top-box-b {
+    grid-area: top-box-b;
+}
+/* Boxes  */
+.boxes {
+    display: grid;
+    grid-gap: 20px;
+    /* adjust the columns to fit when resized or expanded */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.box {
+    background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+/* Info section */
+.info {
+    background:var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+    padding: 3rem;
+}
+/* Portfolio */
+.portfolio {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+.portfolio img {
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+/* Footer  */
+footer {
+    margin-top:  2rem;
+    background: var(--dark);
+    color: var(--ligth);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 700px){
+    .top-container {
+        /* changes the top-box-a && top-box-b to go under showcase */
+        grid-template-areas:
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
+    /* reduce the size of the title */
+    .showcase h1 {
+        font-size: 2.5rem;
+    }
+    /* display it in one block */
+    .main-nav ul {
+        grid-template-columns: 1fr;
+    }
+    /* display it in one block */
+    .info {
+        grid-template-columns: 1fr;
+    }
+    /* boouton of info will display under the info element as a block */
+    .info .btn {
+        margin: auto;
+        text-align: center;
+        display: block;
+    }
+}
+@media (max-width: 500px) {
+    .top-container {
+        grid-template-areas:
+        'showcase'
+        'top-box-a'
+        'top-box-b';
+    }
+}
+/*** End of third page template ***/
+
+/*** Beginnin of second page template ***/
+

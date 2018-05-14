@@ -1,52 +1,66 @@
 /***** Global Properties  *****/
-* {
-   padding: 0;
-   margin: 0;
-}
+
 .ul-content {
     margin: 0;
     padding: 0;
 }
 /*** Wrapper  ***/
 .wrapper {
-    margin: auto;
-    padding: 0;
+    margin: 0;
+    padding:5px;
     width: 100%;
-    display: flex;
-    align-items: center;
+    height: 100vh;
+    /* text-align: center; */
+    /* display: grid; */
 }
 
 /*** Header ***/
 .header {
+    margin: 0 auto;
     width: 100%;
-    height: auto;
+    min-height: 100px;
     border-bottom: 5px solid #ff5c14;
     background-color: #54605e;
 }
 .header img {
-    min-height: 100px;
-    min-width: 100%;
+    width: 90px;
+    /* height: 90px;; */
 }
+
 /*** Menu container ***/
 .ul-container {
     padding: 0 ;
     margin: 0;
-    display: inline;
+}
+.ul-content li {
+    list-style-type: none;
+    text-decoration: none;
+    /* float: left; */
+}
+.ul-content a {
+    float: right;
+    /* display: inline; */
+    padding: 5px;
+    margin-left: 10px;
+    color: #fff;
+    background-color: #0d98c8; 
+    line-height: 25px;
 }
 /*** Container ***/
 .container {
-    width: 100%;
-    min-height: 500px;
+    float: left;
+    margin: auto;
+    min-width: 500px;
+    min-height: 400px;
     overflow: hidden; /* needed if height was fixed (e.g: height: 400px;)*/
-    background-image: url("../images/bg.jpg");
+    background-image: url("../images/bg.jpeg");
     background-size: cover;
 }
 /*** Footer ***/
 .footer {
-    position: absolute;
+    float: left;
     width: 100%;
     height: 100px;
-    bottom: 0;
     background-color: #ff5c14;
     border: 5px solid #fff;
 }
